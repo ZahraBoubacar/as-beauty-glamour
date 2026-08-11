@@ -124,17 +124,22 @@ service cloud.firestore {
 ## Captures d'écran
 
 ### Boutique
-![Boutique](assets/Capture%20d'%C3%A9cran%202026-08-11%20213640.png)
+![Boutique](assets/Boutique.png)    ![Boutique](assets/boutique2.png)
 
 ### Fiche produit
-![Produit](assets/Capture%20d'%C3%A9cran%202026-08-11%20213653.png)
+![Produit](assets/details.png)       ![Produit](assets/detail.png)
 
 ### Panier & commande
-![Panier](assets/Capture%20d'%C3%A9cran%202026-08-11%20213709.png)
+![Panier](assets/panier.png)
 
 ### Espace admin
-![Admin](assets/Capture%20d'%C3%A9cran%202026-08-11%20213745.png)
+![Boutique](assets/Capture%20d'%C3%A9cran%202026-08-11%20213640.png)
 
+![Produit](assets/Capture%20d'%C3%A9cran%202026-08-11%20213653.png)
+
+![Panier](assets/Capture%20d'%C3%A9cran%202026-08-11%20213709.png)
+
+![Admin](assets/Capture%20d'%C3%A9cran%202026-08-11%20213745.png)
 
 ---
 ## Auteur
