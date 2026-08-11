@@ -21,140 +21,81 @@ SPA (Single Page Application) en HTML/CSS/JS vanilla, déployée sur Netlify.
 
 ---
 
+## Captures d'écran
+
+### Boutique
+<img src="assets/Boutique.jpg" width="480" alt="Boutique" />
+<img src="assets/boutique2.jpg" width="480" alt="Boutique 2" />
+
+### Fiche produit
+<img src="assets/details.jpg" width="480" alt="Fiche produit" />
+<img src="assets/detail.jpg" width="480" alt="Détail produit" />
+
+### Panier & commande
+<img src="assets/panier.png" width="480" alt="Panier" />
+
+### Espace admin
+<img src="assets/Capture%20d'%C3%A9cran%202026-08-11%20213640.png" width="480" alt="Admin 1" />
+<img src="assets/Capture%20d'%C3%A9cran%202026-08-11%20213653.png" width="480" alt="Admin 2" />
+<img src="assets/Capture%20d'%C3%A9cran%202026-08-11%20213709.png" width="480" alt="Admin 3" />
+<img src="assets/Capture%20d'%C3%A9cran%202026-08-11%20213745.png" width="480" alt="Admin 4" />
+
+---
+
 ## Stack technique
 
-- **Frontend :** HTML5, CSS3 (custom properties, responsive), JavaScript ES modules
+- **Frontend :** HTML5, CSS3, JavaScript ES modules
 - **Backend / data :** Firebase Authentication + Cloud Firestore (temps réel)
-- **Images :** Cloudinary (upload unsigned, plan gratuit)
-- **Commandes :** WhatsApp Business link (`wa.me`) + enregistrement Firestore
-- **Hébergement :** Netlify (`netlify.toml` inclus)
-- **Pas de framework** — un seul fichier principal (`shop.html`) pour simplicité et performance
+- **Images :** Cloudinary (upload unsigned)
+- **Commandes :** WhatsApp Business (`wa.me`) + enregistrement Firestore
+- **Hébergement :** Netlify
+- **Pas de framework** — un seul fichier principal (`shop.html`)
 
 ---
 
 ## Structure du projet
 
-```
-AS Beauty Glamour/
-├── index.html          # Redirection → shop.html
-├── shop.html           # Boutique + admin (app complète)
-├── admin.html          # Entrée admin (iframe → shop.html#admin)
+as-beauty-glamour/
+├── index.html
+├── shop.html
+├── admin.html
 ├── assets/
-│   └── logo.svg
-├── netlify.toml        # Config déploiement + redirect /admin
+├── netlify.toml
 └── README.md
-```
 
 ---
 
-## Fonctionnalités clés (portfolio)
+## Fonctionnalités clés
 
-1. **E-commerce léger adapté au contexte local**  
-   Pas de paiement en ligne obligatoire : flux WhatsApp + admin, adapté à la Mauritanie.
-
-2. **Gestion stock**  
-   Rupture de stock, limite de quantité panier, badge « Rupture ».
-
-3. **Multi-images produit**  
-   Jusqu'à 6 photos par article, légendes, lightbox plein écran, `object-fit: contain`.
-
-4. **Admin mobile-friendly**  
-   Navigation sticky, formulaires tactiles, export CSV.
-
-5. **Temps réel**  
-   `onSnapshot` Firestore pour produits et commandes.
-
----
-
-## Mise en route (développement)
-
-1. Cloner le repo
-2. Créer un projet [Firebase](https://console.firebase.google.com)
-   - Auth : Email/Password
-   - Firestore
-3. Remplacer `firebaseConfig` et `ADMIN_EMAIL` / `WA` dans `shop.html`
-4. Appliquer les règles Firestore (voir ci-dessous)
-5. Configurer Cloudinary (cloud name + preset unsigned)
-6. Ouvrir `shop.html` en local ou déployer sur Netlify
-
-### Règles Firestore (exemple)
-
-```js
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    function isAdmin() {
-      return request.auth != null
-        && request.auth.token.email == "VOTRE_EMAIL_ADMIN";
-    }
-    match /products/{id} {
-      allow read: if true;
-      allow create, update, delete: if isAdmin();
-    }
-    match /orders/{id} {
-      allow create: if true;
-      allow read, update, delete: if isAdmin();
-    }
-  }
-}
-```
-
-> Les clés Firebase client sont publiques par design ; la sécurité repose sur les **règles** et le compte admin.
-
----
-
-## Déploiement Netlify
-
-1. Connecter le repo GitHub à Netlify
-2. Publish directory : racine du dossier
-3. Le fichier `netlify.toml` gère déjà le chemin `/admin`
+1. **E-commerce adapté au contexte local** — flux WhatsApp + admin, sans paiement en ligne obligatoire  
+2. **Gestion stock** — rupture, limite panier, badge « Rupture »  
+3. **Multi-images produit** — jusqu’à 6 photos, lightbox, `object-fit: contain`  
+4. **Admin mobile-friendly** — navigation sticky, export CSV  
+5. **Temps réel** — `onSnapshot` Firestore pour produits et commandes  
 
 ---
 
 ## Points forts pour le portfolio
 
-- **Problème résolu :** vendre en Mauritanie sans checkout bancaire complexe
-- **Choix techniques :** vanilla JS + Firebase (coût quasi nul, temps réel)
-- **UX locale :** numéros 2/3/4, livraison Mauritanie, WhatsApp
-- **Admin utilisable sur téléphone** (cible : gérante de boutique)
-
-
+- Problème résolu : vendre en Mauritanie sans checkout bancaire complexe  
+- Choix techniques : vanilla JS + Firebase (coût quasi nul, temps réel)  
+- UX locale : numéros 2/3/4, livraison Mauritanie, WhatsApp  
+- Admin utilisable sur téléphone  
 
 ---
-## Captures d'écran
 
-### Boutique
-![Boutique](assets/Boutique.jpg)    ![Boutique](assets/boutique2.jpg)
+## Auteure
 
-### Fiche produit
-![Produit](assets/details.jpg)       ![Produit](assets/detail.jpg)
-
-### Panier & commande
-![Panier](assets/panier.png)
-
-### Espace admin
-![Boutique](assets/Capture%20d'%C3%A9cran%202026-08-11%20213640.png)
-
-![Produit](assets/Capture%20d'%C3%A9cran%202026-08-11%20213653.png)
-
-![Panier](assets/Capture%20d'%C3%A9cran%202026-08-11%20213709.png)
-
-![Admin](assets/Capture%20d'%C3%A9cran%202026-08-11%20213745.png)
-
----
-## Auteur
-
-Zahra Boubacar
-Data Analyst · Business Intelligence · Data Science
+**Zahra Boubacar**  
+Data Analyst · Business Intelligence · Data Science  
 Master Data Science & Software Development — ESEN (Tunisie)
 
-GitHub : ZahraBoubacar
-LinkedIn : zahra-boubacar
-Email : zahraboubacar9@gmail.com
-
+- GitHub : [ZahraBoubacar](https://github.com/ZahraBoubacar)  
+- LinkedIn : [zahra-boubacar](https://linkedin.com/in/zahra-boubacar-490927312)  
+- Email : zahraboubacar9@gmail.com  
 
 ---
 
 ## Licence
 
-Usage privé / client. Adapter librement pour d'autres boutiques (crédits appréciés).
+Usage privé / client. Adapter librement pour d’autres boutiques (crédits appréciés).
