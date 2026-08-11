@@ -34,7 +34,7 @@ SPA (Single Page Application) en HTML/CSS/JS vanilla, déployée sur Netlify.
 <img src="assets/detail.jpg" width="280" alt="Détail produit" />
 
 ### Panier & commande
-<img src="assets/panier.png" width="280" alt="Panier" />
+<img src="assets/panier.jpg" width="280" alt="Panier" />
 
 ### Espace admin
 <img src="assets/Capture%20d'%C3%A9cran%202026-08-11%20213640.png" width="480" alt="Admin 1" />
