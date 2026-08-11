@@ -124,10 +124,10 @@ service cloud.firestore {
 ## Captures d'écran
 
 ### Boutique
-![Boutique](assets/Boutique.png)    ![Boutique](assets/boutique2.png)
+![Boutique](assets/Boutique.jpg)    ![Boutique](assets/boutique2.jpg)
 
 ### Fiche produit
-![Produit](assets/details.png)       ![Produit](assets/detail.png)
+![Produit](assets/details.jpg)       ![Produit](assets/detail.jpg)
 
 ### Panier & commande
 ![Panier](assets/panier.png)
