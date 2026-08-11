@@ -118,11 +118,35 @@ service cloud.firestore {
 - **UX locale :** numéros 2/3/4, livraison Mauritanie, WhatsApp
 - **Admin utilisable sur téléphone** (cible : gérante de boutique)
 
----
 
+
+---
+## Captures d'écran
+
+### Boutique
+![Boutique](assets/Capture%20d'%C3%A9cran%202026-08-11%20213640.png)
+
+### Fiche produit
+![Produit](assets/Capture%20d'%C3%A9cran%202026-08-11%20213653.png)
+
+### Panier & commande
+![Panier](assets/Capture%20d'%C3%A9cran%202026-08-11%20213709.png)
+
+### Espace admin
+![Admin](assets/Capture%20d'%C3%A9cran%202026-08-11%20213745.png)
+
+
+---
 ## Auteur
 
-Projet réalisé pour **AS Beauty Glamour** — boutique beauté en Mauritanie.
+Zahra Boubacar
+Data Analyst · Business Intelligence · Data Science
+Master Data Science & Software Development — ESEN (Tunisie)
+
+GitHub : ZahraBoubacar
+LinkedIn : zahra-boubacar
+Email : zahraboubacar9@gmail.com
+
 
 ---
 
