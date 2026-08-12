@@ -23,8 +23,6 @@ SPA (Single Page Application) en HTML/CSS/JS vanilla, déployée sur Netlify.
 
 ## Captures d'écran
 
-## Captures d'écran
-
 ### Boutique
 <img src="assets/Boutique.jpg" width="280" alt="Boutique" />
 <img src="assets/boutique%202.jpg" width="280" alt="Boutique 2" />
